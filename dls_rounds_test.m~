@@ -1,0 +1,30 @@
+% 
+% Testing script to test rounds versus number of machines
+
+n = 650;
+V = 1:n;
+machines = 2:3:n^0.7;
+eps = 0.1;
+num_reps = 3;
+
+rounds = zeros(1,length(machines));
+for m = 1:length(machines)
+    A = randi([0 1],n,n);        
+    F = sfo_fn_cutfun(A);
+    ave_rounds 
+    for i = 1:num_reps
+    [num_rounds,~,~] = LocalSearchDist(F,V,eps,machines(m));
+    rounds(m) = num_rounds;
+    
+end
+
+% Plot
+plot(machines, rounds, 'o-');
+t = sprintf('Number of rounds vs number of machines,p=%d,eps=%1.3f',n,eps);
+title(t);
+xlabel('Number of machines');
+ylabel('Number of rounds');
+filename = sprintf('CUTFUNC_roundstest_n=%d.png',n);
+saveas(gcf,filename);
+
+
