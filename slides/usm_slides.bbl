@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{Buchbinder}
+Niv Buchbinder, Moran Feldman, Joseph~(Seffi) Naor, and Roy Schwartz.
+\newblock Submodular maximization with cardinality constraints.
+\newblock {\em Proceedings of the Twenty-fifth Annual ACM-SIAM Symposium on
+  Discrete Algorithms}, pages 1433--1452, 2014.
+
+\bibitem{Calinescu2007}
+Gruia Calinescu, Chandra Chekuri, Martin P{\'a}l, and Jan Vondr{\'a}k.
+\newblock Maximizing a submodular set function subject to a matroid constraint.
+\newblock {\em Integer Programming and Combinatorial Optimization: 12th
+  International IPCO Conference, Ithaca, NY, USA, June 25-27, 2007.
+  Proceedings}, pages 182--196, 2007.
+
+\bibitem{Feige}
+Uriel Feige, Vahab~S. Mirrokni, and Jan Vondrak.
+\newblock Maximizing non-monotone submodular functions.
+\newblock {\em SIAM Journal on Computing}, 40.4:1133--1153, 2011.
+
+\bibitem{mapreduce}
+Karloff Howard, Siddharth~Suri ad, and Sergei Vassilvitskii.
+\newblock A model of computation for mapreduce.
+\newblock {\em Proceedings of the twenty-first annual ACM-SIAM symposium on
+  Discrete Algorithms}, pages 938--948, 2010.
+
+\end{thebibliography}

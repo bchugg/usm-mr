@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUN 2017 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUN 2017 16:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -893,6 +893,11 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
@@ -913,6 +918,11 @@ Overfull \hbox (7.305pt too wide) has occurred while \output is active
 
 Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
+ []
+
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
  []
 
 [2
@@ -944,6 +954,11 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [3
 
 ]
@@ -957,6 +972,11 @@ Overfull \hbox (7.305pt too wide) has occurred while \output is active
 
 Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
+ []
+
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
  []
 
 [4
@@ -975,6 +995,11 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [5
 
 ]
@@ -991,6 +1016,11 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [6
 
 ]
@@ -1001,6 +1031,11 @@ Overfull \hbox (7.305pt too wide) has occurred while \output is active
 
 Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
+ []
+
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
  []
 
 [7
@@ -1015,10 +1050,15 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [8
 
 ]
-<../plots/CUTFUNC_ROUNDS_N_100:50:600_eps_0.1_p_log(n).png, id=300, 578.16pt x 
+<../plots/CUTFUNC_ROUNDS_N_100:50:600_eps_0.1_p_log(n).png, id=294, 578.16pt x 
 434.1018pt>
 File: ../plots/CUTFUNC_ROUNDS_N_100:50:600_eps_0.1_p_log(n).png Graphic file (t
 ype png)
@@ -1036,10 +1076,15 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [9
 
  <../plots/CUTFUNC_ROUNDS_N_100:50:600_eps_0.1_p_log(n).png (PNG copy)>]
-<../plots/CUTFUNC_FUNCVALS_rounds_20_n_600_eps_0.1_p_log(n).png, id=334, 578.16
+<../plots/CUTFUNC_FUNCVALS_rounds_20_n_600_eps_0.1_p_log(n).png, id=327, 578.16
 pt x 434.1018pt>
 File: ../plots/CUTFUNC_FUNCVALS_rounds_20_n_600_eps_0.1_p_log(n).png Graphic fi
 le (type png)
@@ -1058,10 +1103,15 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [10
 
  <../plots/CUTFUNC_FUNCVALS_rounds_20_n_600_eps_0.1_p_log(n).png (PNG copy)>]
-<../plots/CUTFUNC_IMPRVMTS_rounds_20_n_600_eps_0.1_p_log(n).png, id=369, 578.16
+<../plots/CUTFUNC_IMPRVMTS_rounds_20_n_600_eps_0.1_p_log(n).png, id=361, 578.16
 pt x 434.1018pt>
 File: ../plots/CUTFUNC_IMPRVMTS_rounds_20_n_600_eps_0.1_p_log(n).png Graphic fi
 le (type png)
@@ -1080,11 +1130,15 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [11
 
- <../plots/CUTFUNC_IMPRVMTS_rounds_20_n_600_eps_0.1_p_log(n).png (PNG copy)>]
-No file usm_slides.bbl.
-
+ <../plots/CUTFUNC_IMPRVMTS_rounds_20_n_600_eps_0.1_p_log(n).png (PNG copy)>] (
+./usm_slides.bbl)
 Overfull \hbox (7.305pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/6 Unconstrained 
  []
@@ -1094,9 +1148,15 @@ Overfull \hbox (3.8269pt too wide) has occurred while \output is active
  []\OT1/cmr/m/n/5 Improvements  
  []
 
+
+Overfull \hbox (1.74391pt too wide) has occurred while \output is active
+ []\OT1/cmr/m/n/6 Bibliography  
+ []
+
 [12
 
-]
+ </usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
+>]
 \tf@nav=\write6
 \openout6 = `usm_slides.nav'.
 
@@ -1127,14 +1187,17 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 17305 strings out of 493014
- 333197 string characters out of 6133351
+ 17357 strings out of 493014
+ 334888 string characters out of 6133351
  401227 words of memory out of 5000000
- 20398 multiletter control sequences out of 15000+600000
- 12714 words of font info for 49 fonts, out of 8000000 for 9000
+ 20443 multiletter control sequences out of 15000+600000
+ 13066 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,60p,409b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1151,11 +1214,12 @@ ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on usm_slides.pdf (12 pages, 219965 bytes).
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on usm_slides.pdf (12 pages, 250051 bytes).
 PDF statistics:
- 495 PDF objects out of 1000 (max. 8388607)
- 452 compressed objects within 5 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 498 PDF objects out of 1000 (max. 8388607)
+ 451 compressed objects within 5 object streams
+ 35 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
