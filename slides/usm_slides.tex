@@ -26,52 +26,135 @@ Formally, a set function $f:2^X\rightarrow \R$ is \textit{submodular} iff
 \[f(A\cup \{x\})-f(A) \geq f(B\cup\{x\})-f(B),\]
 for all $A\subset B$. \\
 \vspace{0.4cm}
-Intuitively, think of decreasing marginal gains: The more you have, the less you appreciate gaining something new. \\
+\textbf{Intuition:} Think of decreasing marginal gains. The more you have, the less you appreciate gaining something new. \\
 \vspace{0.4cm}
 These functions find applications in graph theory, game theory and machine learning. 
 \end{frame}
 
 \begin{frame}
 \frametitle{Background}
-We are interested in maximizing such functions, i.e., 
+\textbf{Problem of interest:}
 \[\max_{S\subset X}f(S).\]
-There are no constraints on the subsets over which we can maximize and the functions are non-monotone --- \textit{unconstrained, non-monotone,  submodular maximization (USM)}. \\
+
+Has been well studied in many settings! In general this problem is NP-Hard \cite{Feige}.
+
 \vspace{0.4cm}
-In general, this problem is NP-Hard so we search for approximations. 
+So we settle for constraints and approximations:
+\begin{itemize}
+\item Greedy algorithm gives a $(1- \frac{1}{e})$-approx. for Cardinality Constraints (monotone) \cite{Buchbinder}
+\item A continuous variant also gives a $(1 - \frac{1}{e})$-approx. for Matroid Constraints (monotone) \cite{Calinescu2007}. 
+\end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Unconstrained, Non-Monotone Submodular Maximization (USM)}
+Less constraints $\Rightarrow$ harder to maximize. Our problem of interest:
+\begin{itemize}
+\item Unconstrained, non-monotone submodular function maximization,
+\item But, in a parallel setting (i.e. MapReduce) 
+\begin{itemize}
+\item Most applications of submodular maximization arise when dataset is too large to fit on one machine. Understanding how to parallelize computation is important. 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{MapReduce}
+What is MapReduce? 
+\begin{itemize}
+\item Distributed framework for computation.
+\item Computation proceeds in rounds.
+\begin{itemize}
+\item \textbf{At most polylog number of rounds permitted.}
+\end{itemize}
+\item In each round, many machines perform computation.
+\begin{itemize}
+\item Limited to polytime computation.
+\end{itemize}
+\item After each round, machines communicate.
+\item Each machine limited to $o(n)$ storage.   
+\end{itemize}
+\vspace{0.4 cm}
+This will be our distributed framework. Developed by Karloff et al. \cite{mapreduce}. 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Our Approach}
+Explore canonical parallelizations of existing well-known algorithms.
+
+\vspace{0.4 cm}
+
+One algorithm seemed better than others: 
+
+\vspace{0.4 cm}
+\textbf{Local Search} (Feige et al. \cite{Feige}): 
+\begin{itemize}
+\item Achieves $(\frac{1}{3})$ approximation factor. 
+\begin{itemize}
+\item Comparable to state of the art. 
+\end{itemize}
+\item There was an intuitive parallelization.
+\begin{itemize}
+\item Split the search across many machines.
+\end{itemize}
+\item Approximation guarantee would not deteriorate after parallelizing.
+\begin{itemize}
+\item In fact, get approximation factor for free!
+\end{itemize}
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \section{Local Search}
 \frametitle{Local Search}
-Local Search (LS) achieves a $(1/3-\frac{\epsilon}{n^2})$-approximation in a centralized setting. The idea: Search for elements that increase the marginal by a factor of $(1+\frac{\epsilon}{n})$, either by adding them to, or removing them from, the current solution. \\
-\vspace{0.3cm}
-\textbf{Local Search}
+Good algorithm for USM exists in the centralized setting!\\
+\vspace{0.6 cm}
+\textbf{Local Search (Idea)}
 \begin{enumerate}
-\item[1] $v\gets \max_{v\in X}f(\{v\})$, $S\gets\{v\}$ 
-\item[2] If there exists an element $x\in X\setminus S$ such that $f(S\cup \{x\})\geq (1+\frac{\epsilon}{n})f(S)$ then $S\gets S\cup\{x\}$. Go back to step 2. 
-\item[3] If there exists an element $s\in S$ such that $f(S\setminus\{s\})\geq (1+\frac{\epsilon}{n})f(S)$ then $S\gets S\setminus \{x\}$. Go back to step 2. 
-\item[4] Return $\am\{f(S),f(X\setminus S)\}$. 
+\item[1] Start with best singleton, $\{v\}$. 
+\item[2] While we can improve the solution, repeat the following: 
+\item[3] Add or remove an element as long as it increases our solution value. 
+\item[4] Return the solution. 
 \end{enumerate}
+
+\vspace{0.4 cm}
+Number of total swaps is bounded by $\tilde{\mathcal{O}}(n^2) \Rightarrow$ halting guaranteed after $\tilde{\mathcal{O}}(n^2)$ rounds.
+\begin{itemize}
+\item Really need $\mathcal{O} (\log ^k (n))$ rounds, so must widdle this down!
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-We want to parallelize Local Search. \\
+\frametitle{A Parallelization Approach}
+We have a promising algorithm, how do we parallelize?
 
-I don't really know how to write this without having way too much detail. 
+\begin{itemize}
+\item Start with arbitrary solution, $S$.
+\item Randomly split the universe, $U$ into $\{U_i, \ldots , U_p \}$.
+\begin{itemize}
+\item Machine $i$ gets $U_i$.
+\end{itemize}
+\item Each machine treats $U_i$ as the full universe and performs local search starting from $S$. 
+\item When all machines stop:
+\begin{itemize}
+\item Update $S$ to be the best solution across the machines.
+\end{itemize}
+\item Repeat until $S$ doesn't change.
+\end{itemize}
+
+\vspace{0.4 cm}
+\textbf{Main Problem:} How do we guarantee that we only require a polylog number of rounds?
+
+\vspace{0.4 cm}
+Turn to empirical evidence for building motivation, ideas, and intuition.
+
 \end{frame}
 
-\begin{frame}
-\section{Results}
-Experiments were implemented in \textsc{Matlab}. \\
-\vspace{0.4cm}
-Parallelization was mimicked --- the algorithm was not truly implemented in parallel. \\
-\vspace{0,4cm}
-It was also not implemented in MapReduce. 
-\end{frame}
 
 \begin{frame}
 \subsection{Number of Rounds}
-
 \frametitle{Number of Rounds}
 \includegraphics[scale=0.5]{../plots/{CUTFUNC_ROUNDS_N_100:50:600_eps_0.1_p_log(n)}.png}
 \end{frame}
@@ -89,9 +172,10 @@ It was also not implemented in MapReduce.
 \end{frame}
 
 \begin{frame}
-\section{Results}
-\frametitle{What the f*** is going on?}
-Woooo! 
+\section{Bibliography}
+\frametitle{References}
+\bibliographystyle{plain}
+\footnotesize{\bibliography{ref.bib}}
 \end{frame}
 
 \end{document}
